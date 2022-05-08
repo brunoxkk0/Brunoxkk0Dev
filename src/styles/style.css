@@ -1,0 +1,860 @@
+/* Variaveis */
+:root {
+
+    --bluePrim:     #002448;
+    --lightGray:    #FAFAFA;
+    --gold:         #FFD33F;
+    --dots:         rgba(250, 208, 44, 0.25);
+
+    --textHeader:   var(--bluePrim);
+    --bodyHeader:   white;
+    --bodyText:     white;
+
+}
+
+
+/* Utilitarios */
+
+*{
+    scroll-behavior: smooth !important;
+    scroll-margin-top: 62px;
+}
+
+ul{
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+ul li a{
+    text-decoration: none;
+}
+
+a{
+    text-decoration: none;
+}
+
+.container{
+    display:    flex;
+    max-width:  992px;
+    margin:     auto;
+    width:      100%;
+    min-width:  320px;
+}
+
+.text-center{
+    text-align: center;
+}
+
+.sectionTitle{
+    width: 100%;
+}
+
+.perfilPhoto{
+    width: 200px;
+    border: white solid;
+    border-radius: 20px;
+}
+
+.slickArrows{
+
+    background-color: var(--gold);
+    border-radius: 10px;
+    cursor: pointer;
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+
+}
+
+.slickArrows i{
+
+    width: 32px;
+    height: 32px;
+
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-content: center;
+    justify-content: center;
+
+    font-size: 24px;
+    color: var(--bluePrim);
+
+}
+
+.slickDots{
+    display: flex;
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.slickDots ul{
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.slickDots li{
+    display: flex;
+    margin: 0 4px;
+}
+
+.slickDots li button{
+    background: var(--dots);
+    height: 12px;
+    width: 12px;
+    overflow: hidden;
+    color: transparent;
+    border: none;
+    border-radius: 50%;
+}
+
+.slickDots .slick-active button{
+    background: var(--gold);
+    height: 13px;
+    width: 13px;
+}
+
+.btn {
+    /* Thanks bootstrap */
+
+    display: inline-block;
+    vertical-align: middle;
+
+    cursor: pointer;
+
+    text-align: center;
+    text-decoration: none;
+
+    font-family: 'Barlow', sans-serif;
+    font-weight: 600;
+    font-size: 1.2rem;
+    color: var(--bluePrim);
+
+    line-height: 1.5;
+
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    user-select: none;
+
+    background-color: var(--gold);
+
+    border: 1px solid transparent;
+    padding: 0.375rem 0.75rem;
+    border-radius: 0.25rem;
+
+    transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+
+/* Nav Bar */
+
+#navBar{
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    height: 46px;
+    padding: 8px 0 8px 0;
+    background-color: var(--bodyHeader);
+    font-family: 'Bungee', cursive;
+
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+
+    z-index: 1000;
+
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+}
+
+#navBar .navLogo{
+    font-size: 24px;
+}
+
+#navBar a{
+    color: var(--textHeader);
+    text-decoration: none;
+}
+
+#navBar .navContainer{
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+#navBar .navBody{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    width: 50%;
+}
+
+#navBar .navBodyItem{
+    font-size: 16px;
+    text-align: center;
+    text-anchor: middle;
+}
+
+
+/* Sobre */
+
+#sobre{
+
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+
+    margin-top: 62px;
+    padding: 64px 0 64px 0;
+    background-color: var(--bluePrim);
+    font-family: 'Bungee', cursive;
+}
+
+#sobre .socialContainer{
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+}
+
+#sobre .socialPhoto{
+    margin-bottom: 16px;
+}
+
+#sobre .socialPhoto img{
+    width: 300px;
+    height: 350px;
+    object-fit: cover;
+}
+
+#sobre .socialIconsContainer{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+}
+
+#sobre .socialIconsContainer a{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#sobre .socialIconsContainer a p{
+    margin-top: 4px;
+    font-family: 'Barlow', sans-serif;
+    font-size: 14px;
+    text-decoration: none;
+    color: var(--bodyHeader);
+}
+
+#sobre .socialIconsItem i{
+    font-size: 32px;
+    color: var(--bodyText);
+}
+
+#sobre .sobreContentContainer{
+    display: flex;
+    flex-direction: row;
+
+    width: 100%;
+    margin-left: 64px;
+}
+
+#sobre .sobreContent{
+    display: flex;
+    flex-direction: column;
+    color: var(--bodyText);
+    justify-content: center;
+}
+
+#sobre .sobreContent h1{
+    font-family: 'Bungee', cursive;
+    font-size: 48px;
+}
+
+#sobre .sobreContent h6 {
+
+    font-family: 'Barlow', sans-serif;
+    font-weight: 400;
+    font-style: italic;
+    font-size: 18px;
+    color: var(--gold);
+}
+
+#sobre .sobreContent h6::after{
+     content: '';
+
+     height: 2px;
+     width: 330px;
+
+     background-color: white;
+
+     margin-top: 16px;
+
+     display: block;
+     position: absolute;
+}
+
+#sobre .sobreContent p{
+    margin-top: 40px;
+    font-family: 'Barlow', sans-serif;
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 1.6;
+}
+
+
+/* Competências */
+
+#competencias {
+
+    color: var(--bluePrim);
+    background-color: var(--lightGray);
+    padding-top: 16px;
+    padding-bottom: 16px;
+}
+
+#competencias h1 {
+
+    margin-top: 32px;
+    margin-bottom: 32px;
+
+    font-family: 'Bungee', cursive;
+    font-size: 40px;
+}
+
+#competencias h1::after{
+
+    content: '';
+
+    height: 4px;
+    width: 65px;
+
+    background-color: var(--gold);
+
+    margin: 16px auto auto;
+
+    display: block;
+
+    border-radius: 20px;
+    position: relative;
+
+}
+
+#competenceCarousel .carousel{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+#competencias #competenceCarousel .carouselItem {
+    width: 100px;
+    height: 150px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+}
+
+#competencias #competenceCarousel .carouselItem  p{
+    font-family: 'Barlow', sans-serif;
+    font-size: 16px;
+    margin-bottom: 8px;
+    text-align: center;
+}
+
+#competencias #competenceCarousel .carouselItem .carouselItemIconContainer{
+    display: flex;
+    justify-content: center;
+}
+
+#competencias #competenceCarousel .carouselItem .carouselItemIconContainer img{
+    width: 60px;
+}
+
+#competencias #competenceCarousel .carouselItem .carouselItemIconPseudo{
+    --competence_color: white;
+}
+
+#competencias #competenceCarousel .carouselItem .carouselItemIconPseudo::after{
+
+    background-color: var(--competence_color, white);
+
+    display: block;
+    position: relative;
+    content: '';
+
+    height: 4px;
+    width: 65px;
+
+    margin: 8px auto auto;
+
+    border-radius: 20px;
+}
+
+/* Projetos */
+
+#projetos {
+
+    color: white;
+    background-color: var(--bluePrim);
+    padding-top: 16px;
+    padding-bottom: 16px;
+}
+
+#projetos h1 {
+
+    margin-top: 32px;
+    margin-bottom: 32px;
+
+    font-family: 'Bungee', cursive;
+    font-size: 40px;
+}
+
+#projetos h1::after{
+
+    content: '';
+
+    height: 4px;
+    width: 65px;
+
+    background-color: var(--gold);
+
+    margin: 16px auto auto;
+
+    display: block;
+
+    border-radius: 20px;
+    position: relative;
+
+}
+
+#projectCarousel .carousel{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+
+#projetos #projectCarousel .chunkItemContainer{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin: auto;
+}
+
+#projetos #projectCarousel .chunkItemContainerColumn{
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+    justify-content: center;
+}
+
+
+#projetos #projectCarousel .carouselItem {
+
+    width: 70%;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+
+    margin: auto auto 32px auto;
+
+    background-color: var(--bodyHeader);
+    border-radius: 10px;
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+}
+
+#projetos #projectCarousel .carouselItem .carouselItemIconContainer{
+    display: flex;
+    justify-content: center;
+}
+
+#projetos #projectCarousel .carouselItem .carouselItemIconContainer img{
+    width: 150px;
+    height: 150px;
+    border-radius: 10px 0 0 10px;
+}
+
+#projetos #projectCarousel .carouselItem .carouselItemBodyContainer{
+    margin: 16px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    justify-content: space-around;
+}
+
+#projetos #projectCarousel .carouselItem .carouselItemBodyContainer .carouselTextContainer{
+    height: 100%;
+}
+
+#projetos #projectCarousel .carouselItem  p{
+    font-family: 'Barlow', sans-serif;
+    font-size: 16px;
+    margin-bottom: 8px;
+    color: var(--bluePrim);
+}
+
+#projetos #projectCarousel .carouselItem .carouselItemBodyContainer .carouselItemTitle p{
+    font-size: 24px;
+    font-weight: 600;
+}
+
+
+#projetos #projectCarousel .carouselItem .carouselItemBodyContainer .carouselItemDescription p{
+    font-size: 16px;
+    font-weight: 500;
+}
+
+#projetos #projectCarousel .carouselItem .carouselItemBodyContainer .carouselItemButton{
+    display: flex;
+    flex-direction: row-reverse;
+    align-self: flex-end;
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+}
+
+/* Cursos */
+
+#cursos {
+
+    color: var(--bodyHeader);
+    background-color: var(--bluePrim);
+    padding-top: 16px;
+    padding-bottom: 16px;
+}
+
+#cursos h1 {
+
+    margin-top: 32px;
+    margin-bottom: 32px;
+
+    font-family: 'Bungee', cursive;
+    font-size: 40px;
+}
+
+#cursos h1::after{
+
+    content: '';
+
+    height: 4px;
+    width: 65px;
+
+    background-color: var(--gold);
+
+    margin: 16px auto auto;
+
+    display: block;
+
+    border-radius: 20px;
+    position: relative;
+
+}
+/* -- */
+
+#cursos .courseBody{
+    margin: auto;
+}
+
+#coursesCarousel .carousel{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin: auto;
+}
+
+#cursos #coursesCarousel .carouselItem .courseBody{
+    height: 100%;
+    width: 95%;
+    margin: auto;
+}
+
+#cursos #coursesCarousel .carouselItem {
+
+    width: 300px;
+    height: 300px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    background-color: var(--bodyHeader);
+
+    margin-bottom: 32px;
+    border-radius: 10px;
+
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#cursos #coursesCarousel .carouselItem{
+    color: var(--bluePrim);
+}
+
+#cursos #coursesCarousel .carouselItem .courseTitle{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 75%;
+    background-color: var(--lightGray);
+    border-bottom: rgba(0, 36, 72, 0.30) solid 1px;
+    border-radius: 10px 10px 0 0;
+}
+
+#cursos #coursesCarousel .carouselItem .courseTitle h3{
+    font-family: 'Barlow', sans-serif;
+    font-size: 24px;
+    font-weight: 600;
+    margin-left: 15px;
+    margin-right: 15px;
+}
+
+#cursos #coursesCarousel .carouselItem .courseDescription  p{
+    font-family: 'Barlow', sans-serif;
+    font-size: 16px;
+    font-weight: 500;
+
+    text-overflow: ellipsis;
+
+    margin: 8px;
+
+}
+
+ #cursos #coursesCarousel .carouselItem .courseStatisticsContainer{
+     display: flex;
+     font-size: 12px;
+     margin: 16px 11px 8px;
+     align-items: center;
+ }
+
+#cursos #coursesCarousel .carouselItem .courseStatisticsContainer .courseConclusion{
+    display: flex;
+    margin: auto;
+    align-items: center;
+}
+
+#cursos #coursesCarousel .carouselItem .courseStatisticsContainer .courseConclusion i{
+    font-size: 12px;
+}
+
+#cursos #coursesCarousel .carouselItem .courseStatisticsContainer .courseConclusion p{
+    font-family: 'Barlow', sans-serif;
+    font-size: 12px;
+    display: block;
+    margin-left: 4px;
+}
+
+#cursos #coursesCarousel .carouselItem .courseStatisticsContainer .courseTime{
+    display: flex;
+    margin: auto;
+    align-items: center;
+}
+
+#cursos #coursesCarousel .carouselItem .courseStatisticsContainer .courseTime i{
+    font-size: 12px;
+}
+
+#cursos #coursesCarousel .carouselItem .courseStatisticsContainer .courseTime p{
+    font-family: 'Barlow', sans-serif;
+    font-size: 12px;
+    display: block;
+    margin-left: 4px;
+}
+
+#cursos #coursesCarousel .carouselItem .courseBrandContainer{
+    display: flex;
+    /*padding-left: 20%;*/
+    /*width: 80%;*/
+}
+
+#cursos #coursesCarousel .carouselItem .courseBrandContainer img{
+    width: 140px;
+    height: 40px;
+
+}
+
+#cursos #coursesCarousel .carouselItem .courseButton{
+    width: 80%;
+    margin: 16px auto;
+}
+
+#cursos #coursesCarousel .carouselItem .courseButton a{
+    color: var(--bluePrim);
+}
+
+/* Footer */
+
+#footer{
+    display: flex;
+    background-color: var(--lightGray);
+}
+
+#footer .footerMainContainer{
+    display: flex;
+    flex-direction: column;
+    margin-top: 32px;
+    width: 100%;
+}
+
+#footer .footerMainContainer .footerSecondaryContainer{
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 16px;
+    justify-content: space-between;
+}
+
+#footer .footerMainContainer .footerSecondaryContainer .footerThirdContainer{
+    display: flex;
+    flex-direction: column;
+}
+
+#footer .footerMainContainer .footerSecondaryContainer .footerThirdContainer .footerBrand{
+    font-family: 'Bungee', cursive;
+    font-size: 24px;
+    margin-bottom: 32px;
+}
+
+#footer .footerMainContainer .footerSecondaryContainer .footerThirdContainer .footerBrand a{
+    text-decoration: none;
+    color: var(--bluePrim);
+}
+
+#footer .footerMainContainer .footerSecondaryContainer .footerThirdContainer .footerContactsContainer{
+    display: flex;
+    flex-direction: column;
+}
+
+#footer .footerMainContainer .footerSecondaryContainer .footerThirdContainer .footerContactsContainer .footerContactsTitle{
+    font-size: 18px;
+    font-family: 'Barlow', sans-serif;
+    font-weight: bold;
+    color: var(--bluePrim);
+    margin-bottom: 16px;
+}
+
+#footer .footerMainContainer .footerSecondaryContainer .footerThirdContainer .footerContactsContainer .footerContactsContent{
+    display: flex;
+    flex-direction: column;
+}
+
+#footer .footerMainContainer .footerSecondaryContainer .footerThirdContainer .footerContactsContainer .footerContactsContent a{
+
+    display: flex;
+    align-items: center;
+    height: 32px;
+
+    color: var(--bluePrim);
+
+    font-family: 'Barlow', sans-serif;
+    font-size: 18px;
+
+    text-decoration: none;
+    margin-bottom: 4px;
+
+}
+
+#footer .footerMainContainer .footerSecondaryContainer .footerThirdContainer .footerContactsContainer .footerContactsContent i{
+    font-size: 24px;
+    text-align: center;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 32px;
+    height: 32px;
+
+    margin-right: 4px;
+}
+
+#footer .footerMainContainer .footerSecondaryContainer .footerMapContainer{
+    display: flex;
+    flex-direction: column;
+    font-family: 'Barlow', sans-serif;
+}
+
+#footer .footerMainContainer .footerSecondaryContainer .footerMapContainer .footerMapTitle{
+    font-weight: bold;
+    font-size: 18px;
+    color: var(--bluePrim);
+    margin-bottom: 8px;
+}
+
+#footer .footerMainContainer .footerSecondaryContainer .footerMapContainer .footerMapContent{
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    justify-content: space-around;
+}
+
+#footer .footerMainContainer .footerSecondaryContainer .footerMapContainer .footerMapContent a{
+    text-decoration: none;
+    color: var(--bluePrim);
+}
+
+#footer .footerMainContainer .footerCredits{
+    margin: 16px auto;
+    text-align: center;
+    width: 100%;
+    border-top: var(--bluePrim);
+    border-top-width: 1px;
+    border-top-style: solid;
+}
+
+#footer .footerMainContainer .footerCredits p{
+    font-family: 'Barlow', sans-serif;
+    margin-top: 8px;
+}
+
+@media(max-width: 992px){
+
+    .container{
+        flex-direction: column;
+    }
+
+    #sobre .socialPhoto{
+        display: flex;
+        justify-content: center;
+    }
+
+    #sobre .socialIconsContainer{
+        justify-content: space-evenly;
+        text-align: center;
+        margin: auto auto 32px;
+        width: 50%;
+    }
+
+    #sobre .sobreContentContainer{
+        width: 80%;
+    }
+
+    #competencias .competenceBody{
+        width: 80%;
+        margin: auto;
+    }
+
+    #projetos .projetctBody{
+        width: 80%;
+        margin: auto;
+    }
+
+    #cursos .courseBody{
+        width: 80%;
+        margin: auto;
+    }
+
+    #footer .footerMainContainer{
+        width: 80%;
+        margin: 32px auto auto;
+    }
+
+}
+
