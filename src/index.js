@@ -101,26 +101,30 @@ $(document).ready(() => {
             autoplaySpeed: 3000,
             prevArrow: `<div class="slickArrows"><i class="fa-solid fa-chevron-left"></i></div>`,
             nextArrow: `<div class="slickArrows"><i class="fa-solid fa-chevron-right"></i></div>`,
+            mobileFirst: true,
             responsive: [
                 {
                     breakpoint: 768,
                     settings: {
                         slidesToShow: 4,
                         slidesToScroll: 1,
+                        arrows: false
                     }
                 },
                 {
                     breakpoint: 480,
                     settings: {
                         slidesToShow: 3,
-                        slidesToScroll: 1
+                        slidesToScroll: 1,
+                        arrows: false
                     }
                 },
                 {
                     breakpoint: 320,
                     settings: {
                         slidesToShow: 1,
-                        slidesToScroll: 1
+                        slidesToScroll: 1,
+                        arrows: false
                     }
                 }
             ]
@@ -168,26 +172,14 @@ $(document).ready(() => {
             nextArrow: `<div class="slickArrows"><i class="fa-solid fa-chevron-right"></i></div>`,
             dots: true,
             dotsClass: "slickDots",
+            mobileFirst: true,
             responsive: [
                 {
                     breakpoint: 768,
                     settings: {
-                        slidesToShow: 4,
-                        slidesToScroll: 1,
-                    }
-                },
-                {
-                    breakpoint: 480,
-                    settings: {
-                        slidesToShow: 3,
-                        slidesToScroll: 1
-                    }
-                },
-                {
-                    breakpoint: 320,
-                    settings: {
                         slidesToShow: 1,
-                        slidesToScroll: 1
+                        slidesToScroll: 1,
+                        arrows: false
                     }
                 }
             ]
@@ -239,12 +231,14 @@ $(document).ready(() => {
             nextArrow: `<div class="slickArrows"><i class="fa-solid fa-chevron-right"></i></div>`,
             dots: true,
             dotsClass: "slickDots",
+            mobileFirst: true,
             responsive: [
                 {
                     breakpoint: 768,
                     settings: {
                         slidesToShow: 1,
                         slidesToScroll: 1,
+                        arrows: false
                     }
                 }
             ]
