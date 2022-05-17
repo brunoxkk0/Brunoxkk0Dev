@@ -1,81 +1,6 @@
-const COMPETENCES_URL = "https://raw.githubusercontent.com/brunoxkk0/brunoxkk0_dev/service/competences.json";
-const PROJECTS_URL = "https://raw.githubusercontent.com/brunoxkk0/brunoxkk0_dev/service/projects.json";
-const COURSES = [
-    {
-        title: 'Learn Java Course',
-        description: 'Learn the basics of the popular Java language in this introductory course.',
-        conclusion: new Date("2016-12-11"),
-        time: 4,
-        brand: './src/imgs/brands/codecademy.png',
-        url: 'https://www.codecademy.com/profiles/brunoxkk0/certificates/d3f89367b558583e361640f778191345'
-    },
-    {
-        title: 'Fundamentos do JasperReport e JasperStudio F1',
-        description: 'Como Desenvolver Relatórios em Java com o JasperReports e o JasperStudio.',
-        conclusion: new Date("2021-12-22"),
-        time: 9,
-        brand: './src/imgs/brands/udemy.png',
-        url: 'https://www.udemy.com/certificate/UC-001248b3-041b-4a6c-b8f0-d930903a6176/'
-    },
-    {
-        title: 'Introdução ao Angular 8',
-        description: 'Nesse curso você aprenderá os conceitos e técnicas necessárias para começar a desenvolver aplicações usando Angular 8.',
-        conclusion: new Date("2022-03-30"),
-        time: 5,
-        brand: './src/imgs/brands/dio.png',
-        url: 'https://www.dio.me/certificate/93BCDDB1'
-    },
-    {
-        title: 'Introdução ao TypeScript: Explorando Classes, Tipos e Interfaces',
-        description: 'Explore na prática o TypeScript, uma das linguagens de frontend mais robustas e recomendadas na atualidade. Para isso, o expert apresenta uma série de exemplos práticos que abordam as principais estruturas da linguagem: Classes, Tipos e Interfaces.',
-        conclusion: new Date("2022-03-26"),
-        time: 2,
-        brand: './src/imgs/brands/dio.png',
-        url: 'https://www.dio.me/certificate/56F5527E'
-    },
-    {
-        title: 'Introdução a criação de websites com HTML5 e CSS3',
-        description: 'Nesse curso o especialista vai contar um pouco sobre a história do HTML5 e do CSS3, explicar como funciona a estrutura básica dessas tecnologias, sua semântica, principais elementos e comandos.',
-        conclusion: new Date("2022-03-18"),
-        time: 6,
-        brand: './src/imgs/brands/dio.png',
-        url: 'https://www.dio.me/certificate/5A6D3E37'
-    },
-    {
-        title: 'Introdução ao Git e ao GitHub',
-        description: 'Nesse curso vamos aprender um pouco da história do Git e como ele se tornou essencial para otimizar projetos dos desenvolvedores. Também vamos conhecer seus principais comandos, como funciona a plataforma e como ela pode simplificar o seu trabalho.',
-        conclusion: new Date("2022-03-17"),
-        time: 5,
-        brand: './src/imgs/brands/dio.png',
-        url: 'https://www.dio.me/certificate/4A85E31C'
-    },
-    {
-        title: 'Introdução ao Spring Framework',
-        description: 'Nesse curso você vai começar a entrar no mundo de um dos maiores frameworks para Java Web no mercado atual. Vai aprender a criar e configurar a base que todo projeto que utiliza Spring precisa.',
-        conclusion: new Date("2022-05-12"),
-        time: 3,
-        brand: './src/imgs/brands/dio.png',
-        url: 'https://www.dio.me/certificate/4C65DD7C/'
-    },
-    {
-        title: 'Conheça Tudo Sobre a LGPD: Primeiras Noções',
-        description: 'Aprenda a importância de uma legislação de proteção de dados (Lei nº 13.709/2018) para a sociedade moderna e, de forma introdutória e sem juridiquês, os principais conceitos trazidos pela LGPD.',
-        conclusion: new Date("2022-03-15"),
-        time: 2,
-        brand: './src/imgs/brands/dio.png',
-        url: 'https://www.dio.me/certificate/F420B199'
-    },
-    {
-        title: 'SQL SERVER - Criando suas primeiras consultas',
-        description: 'Aprenda desde a instalação e configuração do ambiente com SQL Server e realize suas primeiras consultas SQL na prática.',
-        conclusion: new Date("2022-04-28"),
-        time: 4,
-        brand: './src/imgs/brands/dio.png',
-        url: 'https://www.dio.me/certificate/AC05AD60'
-    }
-
-]
-
+const COMPETENCES_URL = "https://raw.githubusercontent.com/brunoxkk0/Brunoxkk0Dev/services/competences.json";
+const PROJECTS_URL =    "https://raw.githubusercontent.com/brunoxkk0/Brunoxkk0Dev/services/projects.json";
+const COURSES_URL =     "https://raw.githubusercontent.com/brunoxkk0/Brunoxkk0Dev/services/courses.json";
 
 const chunkArray = (arr, size) =>
     arr.length > size
@@ -207,10 +132,12 @@ $(document).ready(() => {
 
     courseItems.innerHTML = "";
 
-    $.get(PROJECTS_URL, (data) => {
+    $.get(COURSES_URL, (data) => {
 
-        const elements = COURSES; //JSON.parse(data);
+        const elements = JSON.parse(data);
         let inner = "";
+
+        console.log(elements)
 
         const chunkedElements = chunkArray(elements, 2);
 
@@ -223,7 +150,7 @@ $(document).ready(() => {
                     inner += courseItemTemplate
                         .replaceAll("{{course$title}}", chunkedElements[course][item].title)
                         .replaceAll("{{course$description}}", chunkedElements[course][item].description)
-                        .replaceAll("{{course$conclusion}}", chunkedElements[course][item].conclusion.toLocaleDateString("pt-br"))
+                        .replaceAll("{{course$conclusion}}", new Date(chunkedElements[course][item].conclusion).toLocaleDateString("pt-br"))
                         .replaceAll("{{course$time}}", chunkedElements[course][item].time)
                         .replaceAll("{{course$brand}}", chunkedElements[course][item].brand)
                         .replaceAll("{{course$url}}", chunkedElements[course][item].url)
@@ -239,7 +166,7 @@ $(document).ready(() => {
             infinite: true,
             slidesToShow: 2,
             slidesToScroll: 1,
-            autoplay: false,
+            autoplay: true,
             autoplaySpeed: 3000,
             prevArrow: `<div class="slickArrows"><i class="fa-solid fa-chevron-left"></i></div>`,
             nextArrow: `<div class="slickArrows"><i class="fa-solid fa-chevron-right"></i></div>`,

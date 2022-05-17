@@ -966,14 +966,12 @@ a{
     }
 
     #cursos .courseBody{
-        width: 80%;
-        margin: auto;
+        width: 100%;
+        /*margin: auto;*/
     }
 
     #cursos #coursesCarousel .carouselItem {
         margin-top: 32px;
-        width: 220px;
-        height: 250px;
     }
 
     #footer{
