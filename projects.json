@@ -1,0 +1,74 @@
+[
+  {
+    "title": "FileServer",
+    "description": "FileServer é a implementação de um servidor http desenvolvido utilizando o sistema de Socket do Java.",
+    "url": "https://github.com/brunoxkk0/FileServer",
+    "img": "https://illustoon.com/photo/7824.png"
+  },
+  {
+    "title": "Spotify-Clone",
+    "description": "Clone do website do Spotify, com sistema de login implementado desenvolvido na disciplina 'Programação para a Web' na Universidade Técnologica Federeal do Paraná.",
+    "url": "https://github.com/brunoxkk0/Spotify-Clone",
+    "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/19/Spotify_logo_without_text.svg/2048px-Spotify_logo_without_text.svg.png"
+  },
+  {
+    "title": "brunoxkk0_dev",
+    "description": "Site pessoal e portifólio desenvolvido utilizando Angular.",
+    "url": "https://github.com/brunoxkk0/brunoxkk0_dev",
+    "img": "https://angular.io/assets/images/logos/angularjs/AngularJS-Shield.svg"
+  },
+  {
+    "title": "BlockChain",
+    "description": "Implementação de uma BlockChain com armazenamento de transações e algoritmo de prova de trabalho para escrever os blocos.",
+    "url": "https://github.com/brunoxkk0/BlockChain",
+    "img": "https://blockchainacademy.kaptiva.com.br/wp-content/uploads/2021/08/blockchain-1-1.png"
+  },
+  {
+    "title": "p2p-chat",
+    "description": "Implementação de um sistema de chat Peer-to-peer com criptografia de ponta-a-ponta.",
+    "url": "https://github.com/brunoxkk0/p2p-chat",
+    "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/fb/Server-based-network.svg/200px-Server-based-network.svg.png"
+  },
+  {
+    "title": "SyrxOntime",
+    "description": "Sistema de gerenciamento de tempo de jogo para servidores de minecraft, com sistema de recompensas integrado.",
+    "url": "https://github.com/brunoxkk0/SyrxOntime",
+    "img": "https://avatars.githubusercontent.com/u/65431576"
+  },
+  {
+    "title": "Grimoire-legacy",
+    "description": "Grimoire is a core mod that ships and uses Sponge Mixin allowing you to create a patch module which will contain mixins to be applied.",
+    "url": "https://github.com/CrucibleMC/Grimoire-legacy",
+    "img": "https://avatars.githubusercontent.com/u/57817670"
+  },
+  {
+    "title": "VoteParty",
+    "description": "VoteParty é um sistema de festa de votos, para servidores de minecraft com integração direta ao Votifier.",
+    "url": "https://github.com/SyrxCraft/VoteParty",
+    "img": "https://avatars.githubusercontent.com/u/65431576"
+  },
+  {
+    "title": "BetterSkyBlock",
+    "description": "Sistema de ilhas para servidores de minecraft integrado ao GriefDefender.",
+    "url": "https://github.com/SyrxCraft/BetterSkyBlock",
+    "img": "https://avatars.githubusercontent.com/u/65431576"
+  },
+  {
+    "title": "SyrxCore",
+    "description": "Plugin para servidor de minecraft, contendo alguns sistemas base para auxiliar no desenvolvimento.",
+    "url": "https://github.com/SyrxCraft/SyrxCore",
+    "img": "https://avatars.githubusercontent.com/u/65431576"
+  },
+  {
+    "title": "MuAutoPot",
+    "description": "Sistema de auto hot key para utilizar Poções automáticas no jogo Mu Online.",
+    "url": "https://github.com/brunoxkk0/MuAutoPot",
+    "img": "https://pic.onlinewebfonts.com/svg/img_489541.png"
+  },
+  {
+    "title": "BrDownloader",
+    "description": "Sistema de download de arquivos feito em java.",
+    "url": "https://github.com/brunoxkk0/BrDownloader",
+    "img": "https://png.pngtree.com/png-vector/20190116/ourlarge/pngtree-vector-download-icon-png-image_322161.jpg"
+  }
+]
