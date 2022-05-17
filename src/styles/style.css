@@ -157,7 +157,8 @@ a{
     align-items: center;
     justify-content: center;
 
-    height: 46px;
+    min-height: 46px;
+    max-height: 80%;
     padding: 8px 0 8px 0;
     background-color: var(--bodyHeader);
     font-family: 'Bungee', cursive;
@@ -175,6 +176,7 @@ a{
 #navBar .navLogo{
     font-size: 24px;
 }
+
 
 #navBar a{
     color: var(--textHeader);
@@ -198,6 +200,63 @@ a{
     font-size: 16px;
     text-align: center;
     text-anchor: middle;
+}
+
+#navBar .navMobile{
+    display: none;
+}
+
+#navBar #navMobileContainer{
+    margin-top: 32px;
+    display: none;
+    height: 0;
+    transition: max-height 0.15s ease-out;
+}
+
+#navBar #navMobileContainer .navBodyItem{
+    margin-bottom: 16px;
+}
+
+#navBar #navMobile .navMobileContainer{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+#navBar #navMobile .navLogo{
+    display: none;
+}
+
+
+#navBar #navMobile .navLogo a{
+    font-size: 24px;
+}
+
+#navBar #navMobileButton{
+    align-self: flex-end;
+    margin: 0 16px 0 16px;
+}
+
+#navBar #navMobileButton i{
+    font-size: 24px;
+    color: var(--bluePrim);
+    display: block;
+}
+
+
+#navMobile:hover #navMobileContainer{
+    display: block;
+    height: 100%;
+    transition: height 0.25s ease-in;
+}
+
+#navMobile:hover .navMobileContainer{
+    margin-top: 14px;
+}
+
+
+#navMobileContainer a{
+    font-size: 24px;
 }
 
 
@@ -290,10 +349,11 @@ a{
 }
 
 #sobre .sobreContent h6::after{
+
      content: '';
 
      height: 2px;
-     width: 330px;
+    width: 330px;
 
      background-color: white;
 
@@ -578,14 +638,13 @@ a{
 
 #cursos #coursesCarousel .carouselItem .courseBody{
     height: 100%;
-    width: 95%;
-    margin: auto;
+    display: block;
 }
 
 #cursos #coursesCarousel .carouselItem {
 
     width: 300px;
-    height: 300px;
+    height: 400px;
 
     display: flex;
     flex-direction: column;
@@ -607,36 +666,45 @@ a{
 #cursos #coursesCarousel .carouselItem .courseTitle{
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    height: 75%;
+    padding-top: 16px;
+    padding-bottom: 16px;
     background-color: var(--lightGray);
     border-bottom: rgba(0, 36, 72, 0.30) solid 1px;
     border-radius: 10px 10px 0 0;
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.05));
 }
 
 #cursos #coursesCarousel .carouselItem .courseTitle h3{
     font-family: 'Barlow', sans-serif;
-    font-size: 24px;
+    font-size: 16px;
     font-weight: 600;
-    margin-left: 15px;
-    margin-right: 15px;
+
+    margin-left: 16px;
+    margin-right: 16px;
+}
+
+#cursos #coursesCarousel .carouselItem .courseDescription{
+    display: block;
+    /*height: 70px;*/
+    overflow: hidden;
+    margin-left: 16px;
+    margin-right: 16px;
+    margin-top: 16px;
 }
 
 #cursos #coursesCarousel .carouselItem .courseDescription  p{
     font-family: 'Barlow', sans-serif;
-    font-size: 16px;
+    font-size: 14px;
     font-weight: 500;
-
+    line-height: 20px;
     text-overflow: ellipsis;
-
-    margin: 8px;
 
 }
 
  #cursos #coursesCarousel .carouselItem .courseStatisticsContainer{
      display: flex;
      font-size: 12px;
-     margin: 16px 11px 8px;
+     margin: 16px 11px 16px;
      align-items: center;
  }
 
@@ -678,17 +746,19 @@ a{
     display: flex;
     /*padding-left: 20%;*/
     /*width: 80%;*/
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
 }
 
 #cursos #coursesCarousel .carouselItem .courseBrandContainer img{
     width: 140px;
     height: 40px;
-
+    object-fit: contain;
 }
 
 #cursos #coursesCarousel .carouselItem .courseButton{
     width: 80%;
     margin: 16px auto;
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
 }
 
 #cursos #coursesCarousel .carouselItem .courseButton a{
@@ -785,6 +855,10 @@ a{
     font-family: 'Barlow', sans-serif;
 }
 
+#footer .footerMainContainer .footerSecondaryContainer .footerMapContainer a{
+    margin-bottom: 16px;
+}
+
 #footer .footerMainContainer .footerSecondaryContainer .footerMapContainer .footerMapTitle{
     font-weight: bold;
     font-size: 18px;
@@ -824,6 +898,26 @@ a{
         flex-direction: column;
     }
 
+    .btn{
+        font-size: 1rem;
+    }
+
+    #navBar {
+        flex-direction: column-reverse;
+    }
+
+    #navBar .navContainer{
+        display: none;
+    }
+
+    #navBar .navMobile{
+        display: block;
+    }
+
+    #navBar #navMobile .navLogo{
+        display: block;
+    }
+
     #sobre .socialPhoto{
         display: flex;
         justify-content: center;
@@ -838,6 +932,11 @@ a{
 
     #sobre .sobreContentContainer{
         width: 80%;
+        margin: auto;
+    }
+
+    #sobre .sobreContent h6::after{
+        width: 35%;
     }
 
     #competencias .competenceBody{
@@ -845,9 +944,25 @@ a{
         margin: auto;
     }
 
+    #competencias .sectionTitle h1{
+        font-size: 30px;
+    }
+
+    #projetos .sectionTitle h1{
+        font-size: 30px;
+    }
+
     #projetos .projetctBody{
         width: 80%;
         margin: auto;
+    }
+
+    #projetos #projectCarousel .carouselItem .carouselItemIconContainer{
+        display: none;
+    }
+
+    #cursos .sectionTitle h1{
+        font-size: 30px;
     }
 
     #cursos .courseBody{
@@ -855,9 +970,28 @@ a{
         margin: auto;
     }
 
+    #cursos #coursesCarousel .carouselItem {
+        margin-top: 32px;
+        width: 220px;
+        height: 250px;
+    }
+
+    #footer{
+        flex-direction: column;
+    }
+
     #footer .footerMainContainer{
         width: 80%;
         margin: 32px auto auto;
+    }
+
+    #footer .footerMainContainer .footerSecondaryContainer{
+        display: flex;
+        flex-direction: column;
+    }
+
+    #footer .footerThirdContainer{
+        margin-bottom: 16px;
     }
 
 }
