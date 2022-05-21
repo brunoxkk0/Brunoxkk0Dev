@@ -139,33 +139,29 @@ $(document).ready(() => {
 
         console.log(elements)
 
-        const chunkedElements = chunkArray(elements, 2);
+        const chunkedElements = elements
 
         for (let course in chunkedElements) {
 
             inner += "<div class='chunkItemContainer'> <div class='chunkItemContainerColumn'>"
 
-            for (let item in chunkedElements[course]) {
-                if (chunkedElements[course][item]) {
-                    inner += courseItemTemplate
-                        .replaceAll("{{course$title}}", chunkedElements[course][item].title)
-                        .replaceAll("{{course$description}}", chunkedElements[course][item].description)
-                        .replaceAll("{{course$conclusion}}", new Date(chunkedElements[course][item].conclusion).toLocaleDateString("pt-br"))
-                        .replaceAll("{{course$time}}", chunkedElements[course][item].time)
-                        .replaceAll("{{course$brand}}", chunkedElements[course][item].brand)
-                        .replaceAll("{{course$url}}", chunkedElements[course][item].url)
-                }
-            }
+            inner += courseItemTemplate
+                .replaceAll("{{course$title}}", chunkedElements[course].title)
+                .replaceAll("{{course$description}}", chunkedElements[course].description)
+                .replaceAll("{{course$conclusion}}", new Date(chunkedElements[course].conclusion).toLocaleDateString("pt-br"))
+                .replaceAll("{{course$time}}", chunkedElements[course].time)
+                .replaceAll("{{course$brand}}", chunkedElements[course].brand)
+                .replaceAll("{{course$url}}", chunkedElements[course].url)
 
-            inner += "</div> </div>"
+           inner += "</div> </div>"
         }
 
         courseItems.innerHTML = inner;
 
         $('#coursesCarousel .carousel').slick({
             infinite: true,
-            slidesToShow: 2,
-            slidesToScroll: 1,
+            slidesToShow: 3,
+            slidesToScroll: 3,
             autoplay: true,
             autoplaySpeed: 3000,
             prevArrow: `<div class="slickArrows"><i class="fa-solid fa-chevron-left"></i></div>`,
@@ -186,4 +182,37 @@ $(document).ready(() => {
         });
     })
 
+    updateActiveMenuItem();
+
+})
+
+const SECTIONS = document.querySelectorAll('section[id]')
+
+const updateActiveMenuItem = () => {
+
+    const currentLocation = (window.scrollY + (window.innerHeight / 8) * 4) + 31;
+
+    for (const section of SECTIONS) {
+
+        const sectionTop = section.offsetTop
+        const sectionHeight = section.offsetHeight
+
+        const sectionId = section.getAttribute('id')
+
+        if(currentLocation >= sectionTop && currentLocation <= (sectionTop + sectionHeight)){
+            document
+                .querySelector('.navContainer .navBodyItem a[href*=' + sectionId + ']')
+                .parentElement
+                .classList.add('active')
+        }else{
+            document
+                .querySelector('.navContainer .navBodyItem a[href*=' + sectionId + ']')
+                .parentElement
+                .classList.remove('active')
+        }
+    }
+}
+
+$(document).scroll(() => {
+    updateActiveMenuItem()
 })
