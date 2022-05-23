@@ -226,6 +226,15 @@ a{
     width: 0;
 }
 
+#navMobileContainer .navBodyItem:after{
+    content: "";
+    border-bottom: var(--bluePrim) solid 2px;
+    padding-bottom: 4px;
+    display: block;
+    transition: width .3s;
+    width: 0;
+}
+
 .navContainer .navBodyItem:hover:after{
     width: 100%;
 }
@@ -264,11 +273,31 @@ a{
 #navMobile:hover #navMobileContainer{
     display: block;
     height: 100%;
-    transition: height 0.25s ease-in;
+    transition: height 0.50s ease-in;
 }
 
 #navMobile:hover .navMobileContainer{
-    margin-top: 14px;
+    margin-top: 9px;
+}
+
+.closeButton{
+    display: none !important;
+    font-size: 28px !important;
+    margin-top: 0;
+}
+
+.openButton{
+    display: block !important;
+}
+
+#navMobile:hover .openButton{
+    display: none !important;
+}
+
+#navMobile:hover .closeButton{
+    display: block !important;
+    margin-left: 2px;
+    margin-right: 2px;
 }
 
 

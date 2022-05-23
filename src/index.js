@@ -204,9 +204,19 @@ const updateActiveMenuItem = () => {
                 .querySelector('.navContainer .navBodyItem a[href*=' + sectionId + ']')
                 .parentElement
                 .classList.add('active')
+
+            document
+                .querySelector('#navMobileContainer .navBodyItem a[href*=' + sectionId + ']')
+                .parentElement
+                .classList.add('active')
         }else{
             document
                 .querySelector('.navContainer .navBodyItem a[href*=' + sectionId + ']')
+                .parentElement
+                .classList.remove('active')
+
+            document
+                .querySelector('#navMobileContainer .navBodyItem a[href*=' + sectionId + ']')
                 .parentElement
                 .classList.remove('active')
         }
